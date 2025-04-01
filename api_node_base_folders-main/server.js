@@ -7,7 +7,7 @@ const morgan = require("morgan");
 const bodyParser = require("body-parser")
 
 //llamar las rutas exportadas desde la carpeta Routes que serán expuestas
-
+const notasRoutes = require("./routes/notasRoutes"); //ayuda copilot
 const app = express();
 
 //Middlewares
@@ -18,6 +18,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}))
 
 //configurar rutas y darle salidas en endpoints
+
+app.use("/notas", notasRoutes); //ayuda copilot
 
 const PORT = process.env.PORT || 3000;
 
